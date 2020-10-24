@@ -7,7 +7,7 @@ class App extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      modalVisible: true,
+      modalVisible: false,
       descTreino: 'Teste',
       treinos: [{ exec: "Desenv. Militar c/ barra ", repeticao: "5x 5" },
       { exec: "Desenv. Arnold", repeticao: "4x 8" },
