@@ -7,9 +7,9 @@ import Home from './src/pages/Home';
 import Treinos from './src/pages/Treinos';
 import Cronometro from './src/pages/Cronometro';
   
-const navegacao = createStackNavigator()
+
 export default function App() {
-   
+  const navegacao = createStackNavigator()
 
    return (
 
