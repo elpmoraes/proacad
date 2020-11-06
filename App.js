@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text , Button, StyleSheet, Modal} from "react-native";
 import Cron from "./Cron.js";
+import { NavigationContainer } from '@react-navigation/native';
 
 class App extends Component{
   
