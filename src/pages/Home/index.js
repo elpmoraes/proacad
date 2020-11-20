@@ -24,7 +24,10 @@ export default function Home() {
 
   return (
     <View>
-      <ImageBackground source={image} imageStyle={{opacity:0.3}} style={styles.image}>
+      <ImageBackground
+        source={image}
+        imageStyle={{opacity: 0.3}}
+        style={styles.image}>
         <View style={styles.titulo}>
           <FontAwesome name="dumbbell" size={40} color={'#7FDCF8FF'}>
             <Text> Pró ACAD </Text>
@@ -46,7 +49,7 @@ export default function Home() {
         {/* chamando funcao externa */}
         <TouchableOpacity style={styles.botao} onPress={irCronometro}>
           <FontAwesome name="stopwatch-20" size={30} color={'white'}>
-            <Text> Cronômetro </Text>
+            <Text> Contador </Text>
           </FontAwesome>
         </TouchableOpacity>
       </ImageBackground>
@@ -69,10 +72,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF7A9AFF',
     padding: 20,
     margin: 20,
+    borderTopLeftRadius: 30,
+    borderBottomRightRadius: 30,
   },
   image: {
     width: '100%',
     height: '100%',
-
   },
 });

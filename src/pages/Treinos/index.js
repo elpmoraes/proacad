@@ -45,7 +45,7 @@
             { exec: "Rosca Concentrada", repeticao: "4x 10" },
             { exec: "Rosca Martelo", repeticao: "6x 12" },
   { exec: "Triceps Coice", repeticao: "6x 12" }]
-          /*
+          /*/
 import React, { useState } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
@@ -107,9 +107,7 @@ function definirTreino(opcao) {
           horizontal
           data={opcoes}
           renderItem={({item}) => (
-            <TouchableOpacity
-            
-              onPress={() => definirTreino(item.key)}>
+            <TouchableOpacity onPress={() => definirTreino(item.key)}>
               <Text style={style.fonteBotao}>
                 <FontAwesome name={item.n} size={45}>
                   {item.key}
@@ -118,6 +116,7 @@ function definirTreino(opcao) {
             </TouchableOpacity>
           )}
         />
+
       </View>
       <View style={style.content}>
         <DataTable>
@@ -127,7 +126,6 @@ function definirTreino(opcao) {
             </DataTable.Title>
             <DataTable.Title numeric>
               <Text style={style.headerTable}>
-                {' '}
                 <FontAwesome name="edit" size={25}></FontAwesome>Repetição
               </Text>
             </DataTable.Title>
