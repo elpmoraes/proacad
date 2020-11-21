@@ -47,9 +47,9 @@
   { exec: "Triceps Coice", repeticao: "6x 12" }]
           /*/
 import React, { useState } from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Modal} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import {Datatable, DataTable} from 'react-native-paper';
+import {Datatable, DataTable, TextInput} from 'react-native-paper';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 export default function Treino() {
@@ -73,7 +73,8 @@ const C = [{treino: 'Flexão Punho', repeticao: '2x 50'}];
 const D = [{treino: 'flexao', repeticao: '2'}];
 const E = [{treino: 'flexao', repeticao: '200'}];
 
-const [treino, setTreino] = useState(A);
+  const [treino, setTreino] = useState(A);
+  const [visivel, setVisivel] = useState(false);
 
 function definirTreino(opcao) {
   alert("Treino '" + opcao + "' ativado.");
@@ -99,7 +100,14 @@ function definirTreino(opcao) {
   }
 }
 
+  function controlaModal(props) {
+    setVisivel(true);
+  }
   
+  function alterarValor(props,repeticao) {
+    alert('valor'+props+' repeticao '+repeticao+'  ')
+  }
+
   return (
     <View style={style.body}>
       <View style={style.header}>
@@ -116,7 +124,6 @@ function definirTreino(opcao) {
             </TouchableOpacity>
           )}
         />
-
       </View>
       <View style={style.content}>
         <DataTable>
@@ -125,9 +132,7 @@ function definirTreino(opcao) {
               <Text style={style.headerTable}>Exercício</Text>
             </DataTable.Title>
             <DataTable.Title numeric>
-              <Text style={style.headerTable}>
-                <FontAwesome name="edit" size={25}></FontAwesome>Repetição
-              </Text>
+              <Text style={style.headerTable}>Repetição</Text>
             </DataTable.Title>
           </DataTable.Header>
 
@@ -140,11 +145,26 @@ function definirTreino(opcao) {
               <DataTable.Cell numeric>
                 <Text style={style.repeticaoText}>{treino.repeticao}</Text>
               </DataTable.Cell>
+
+              <Modal animationType="slide" transparent={true} visible={visivel}>
+                <View style={style.modalView}>
+                  <TouchableOpacity onPress={() => setVisivel(false)}>
+                    <Text>Fechar Modal</Text>
+                  </TouchableOpacity>
+
+                </View>
+              </Modal>
             </DataTable.Row>
           ))}
         </DataTable>
       </View>
-      <View style={style.foot}></View>
+      <View style={style.foot}>
+        <TouchableOpacity onPress={() => controlaModal()}>
+          <FontAwesome name="edit" size={40} color="#FF7A9AFF">
+            
+          </FontAwesome>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -160,7 +180,11 @@ const style = StyleSheet.create({
   content: {backgroundColor: '#62A0C8FF', flex: 6},
   treinos: {backgroundColor: '#FF7A9AFF'},
 
-  foot: {backgroundColor: '#FFF', flex: 0.8},
+  foot: {
+    backgroundColor: '#FFF',
+    flex: 0.5,
+    alignItems: 'center',
+  },
   botao: {
     backgroundColor: '#53777AFF',
 
@@ -179,4 +203,29 @@ const style = StyleSheet.create({
 
   exercicioText: {fontSize: 28, color: 'white'},
   repeticaoText: {fontSize: 23, color: 'white'},
+  modalView: {
+    margin: 20,
+    flex: 1,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  insideModal: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  modalInput: {
+
+    width: 100,
+    height: 40,
+  },
 });
