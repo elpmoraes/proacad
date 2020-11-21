@@ -1,51 +1,4 @@
-  /*   case 'A':
-        treino = [{ exec: "Flexão", repeticao: "4x 10" },
-          { exec: "Supino Maq", repeticao: "5x 12-10-8-6-4" },
-          { exec: "Crucifixo Maq", repeticao: "6x 12" },
-          { exec: "Voador", repeticao: "4x 10" },
-          { exec: "Fly Declinado", repeticao: "4x 10" },
-          { exec: "ABS Maq", repeticao: "4x 20" },
-          { exec: "ABS Infra", repeticao: "4x 20" },
-          { exec: "Prancha", repeticao: "4x 2min"},
-        ]
-        break;
-        case 'B':
-          treino = [{ exec: "Puxada Aberta", repeticao: "5x 12-10-8-6-4" },
-          { exec: "Remada Curvada Pronada", repeticao: "5x 12-10-8-6-4" },
-          { exec: "Remada Aberta (chão)", repeticao: "5x 12" },
-          { exec: "Serrote", repeticao: "4x 10" },
-          { exec: "Pulldown", repeticao: "6x 12" },
-          { exec: "Encolhimento c/ barra", repeticao: "5x 20" },
-          { exec: "Encolhimento c/ halter", repeticao: "5x 20" },
-          { exec: "Extensão/Flexão de Punho", repeticao: "5x 20"},
-        ]
-        break;
-        case 'C':
-          treino = [{ exec: "Agachamento Maq", repeticao: "5x 5" },
-          { exec: "Mesa Flexora", repeticao: "5x 8" },
-          { exec: "Cadeira Extensora", repeticao: "4x 8" },
-          { exec: "Perdigueiro", repeticao: "3x 20s" },
-          { exec: "Superman", repeticao: "3x 20s" },
-          { exec: "Stiff", repeticao: "4x 12" }]
-      break;
-        case 'D':
-          treino = [{ exec: "Desenv. Militar c/ barra ", repeticao: "5x 5" },
-          { exec: "Desenv. Arnold", repeticao: "4x 8" },
-          { exec: "Elevacão Frontal", repeticao: "5x 12" },
-          { exec: "Evevação Lateral", repeticao: "5x 12" },
-            { exec: "Remada Alta Maq", repeticao: "5x12" },
-            { exec: "Crucifixo Inverso", repeticao: "5x12" },
-          { exec: "Panturrilha", repeticao: "5x 20" }]
-        break;
-        case 'E':
-          treino = [{ exec: "Rosca Direta", repeticao: "4x 12-10-8-6" },
-          { exec: "Triceps Testa na maq", repeticao: "4x 12-10-8-6" },
-          { exec: "Rosca Alternada", repeticao: "4x 8" },
-          { exec: "Triceps Corda", repeticao: "4x 8" },
-            { exec: "Rosca Concentrada", repeticao: "4x 10" },
-            { exec: "Rosca Martelo", repeticao: "6x 12" },
-  { exec: "Triceps Coice", repeticao: "6x 12" }]
-          /*/
+
 import React, { useState } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Modal} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
@@ -64,14 +17,51 @@ const opcoes = [
 ];
 
 const A = [
-  {treino: 'flexao', repeticao: '5x 12-10-8-6-4'},
-  {treino: 'supino', repeticao: '5'},
-  {treino: 'Abdominal', repeticao: '5'},
+  {treino: 'Flexão', repeticao: '4x 10'},
+  {treino: 'Supino Maq', repeticao: '5x 12-10-8-6-4'},
+  {treino: 'Crucifixo Maq', repeticao: '6x 12'},
+  {treino: 'Voador', repeticao: '4x 10'},
+  {treino: 'Fly Declinado', repeticao: '4x 10'},
+  {treino: 'ABS Maq', repeticao: '4x 20'},
+  {treino: 'ABS Infra', repeticao: '4x 20'},
+  {treino: 'Prancha', repeticao: '4x 2min'},
 ];
-const B = [{treino: 'Extensora', repeticao: '2x 12'}];
-const C = [{treino: 'Flexão Punho', repeticao: '2x 50'}];
-const D = [{treino: 'flexao', repeticao: '2'}];
-const E = [{treino: 'flexao', repeticao: '200'}];
+const B = [
+  {treino: 'Puxada Aberta', repeticao: '5x 12-10-8-6-4'},
+  {treino: 'Remada Curvada Pronada', repeticao: '5x 12-10-8-6-4'},
+  {treino: 'Remada Aberta (chão)', repeticao: '5x 12'},
+  {treino: 'Serrote', repeticao: '4x 10'},
+  {treino: 'Pulldown', repeticao: '6x 12'},
+  {treino: 'Encolhimento c/ barra', repeticao: '5x 20'},
+  {treino: 'Encolhimento c/ halter', repeticao: '5x 20'},
+  {treino: 'Extensão/Flexão de Punho', repeticao: '5x 20'},
+];
+const C = [
+  {treino: 'Agachamento Maq', repeticao: '5x 5'},
+  {treino: 'Mesa Flexora', repeticao: '5x 8'},
+  {treino: 'Cadeira Extensora', repeticao: '4x 8'},
+  {treino: 'Perdigueiro', repeticao: '3x 20s'},
+  {treino: 'Superman', repeticao: '3x 20s'},
+  {treino: 'Stiff', repeticao: '4x 12'},
+];
+const D = [
+  {treino: 'Desenv. Militar c/ barra ', repeticao: '5x 5'},
+  {treino: 'Desenv. Arnold', repeticao: '4x 8'},
+  {treino: 'Elevacão Frontal', repeticao: '5x 12'},
+  {treino: 'Evevação Lateral', repeticao: '5x 12'},
+  {treino: 'Remada Alta Maq', repeticao: '5x12'},
+  {treino: 'Crucifixo Inverso', repeticao: '5x12'},
+  {treino: 'Panturrilha', repeticao: '5x 20'},
+];
+const E = [
+  {treino: 'Rosca Direta', repeticao: '4x 12-10-8-6'},
+  {treino: 'Triceps Testa na maq', repeticao: '4x 12-10-8-6'},
+  {treino: 'Rosca Alternada', repeticao: '4x 8'},
+  {treino: 'Triceps Corda', repeticao: '4x 8'},
+  {treino: 'Rosca Concentrada', repeticao: '4x 10'},
+  {treino: 'Rosca Martelo', repeticao: '6x 12'},
+  {treino: 'Triceps Coice', repeticao: '6x 12'},
+];
 
   const [treino, setTreino] = useState(A);
   const [visivel, setVisivel] = useState(false);
